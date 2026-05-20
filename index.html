@@ -36,29 +36,39 @@
     .page {
       width: min(100%, 1040px);
       margin: 0 auto;
-      padding: 56px 28px 72px;
+      padding: 64px 28px 72px;
     }
 
     header {
       border-bottom: 1px solid var(--rule);
-      padding-bottom: 42px;
-      margin-bottom: 56px;
+      padding-bottom: 46px;
+      margin-bottom: 58px;
+    }
+
+    .brand-mark {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(4rem, 10vw, 7rem);
+      line-height: 0.8;
+      color: var(--text);
+      margin: 0 0 28px;
+      font-weight: 400;
+      letter-spacing: -0.04em;
     }
 
     h1 {
-      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
-      font-size: clamp(2.75rem, 7vw, 6rem);
-      line-height: 0.92;
       margin: 0;
-      font-weight: 400;
-      letter-spacing: -0.06em;
+      color: var(--text);
+      font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     .subtitle {
-      margin-top: 14px;
+      margin-top: 8px;
       color: var(--muted);
-      font-size: 1.05rem;
-      letter-spacing: 0.18em;
+      font-size: 0.98rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
@@ -169,7 +179,11 @@
 
     @media (max-width: 720px) {
       .page {
-        padding: 38px 20px 54px;
+        padding: 42px 20px 54px;
+      }
+
+      .brand-mark {
+        margin-bottom: 22px;
       }
 
       .status-grid {
@@ -177,7 +191,7 @@
       }
 
       header {
-        margin-bottom: 34px;
+        margin-bottom: 38px;
       }
 
       section {
@@ -190,6 +204,7 @@
 <body>
   <div class="page">
     <header>
+      <div class="brand-mark">h</div>
       <h1>Harvey Systems</h1>
       <div class="subtitle">Legal Intelligence</div>
     </header>
@@ -275,5 +290,3 @@
   </div>
 </body>
 </html>
-
-
