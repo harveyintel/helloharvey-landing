@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discovery Is Not an Archive: a Harvey Systems white paper on evidentiary reconstruction beyond traditional discovery." />
+  <title>Discovery Is Not an Archive | Harvey Systems</title>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --text: #e6e6e6;
+      --muted: #9a9a9a;
+      --dim: #6f6f6f;
+      --rule: #343434;
+      --panel: #0c0c0c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Akzidenz-Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0.01em;
+    }
+
+    .page {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      padding: 64px 28px 76px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 42px;
+      margin-bottom: 58px;
+    }
+
+    .brand-mark {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(3.75rem, 9vw, 6.75rem);
+      line-height: 0.8;
+      color: var(--text);
+      margin: 0 0 26px;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-name {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--dim);
+    }
+
+    .back-link:hover {
+      color: var(--text);
+      border-bottom-color: var(--text);
+    }
+
+    main {
+      display: grid;
+      gap: 44px;
+    }
+
+    article {
+      max-width: 860px;
+    }
+
+    .paper-label {
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(2.25rem, 5vw, 4.65rem);
+      line-height: 0.98;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      max-width: 900px;
+    }
+
+    .dek {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      max-width: 780px;
+    }
+
+    .meta {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin: 38px 0 46px;
+      padding: 18px 0;
+      color: var(--dim);
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0 0 20px;
+      max-width: 820px;
+    }
+
+    .opening {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      max-width: 880px;
+      margin-bottom: 30px;
+    }
+
+    .short-line {
+      margin-top: 28px;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    .questions {
+      border-left: 1px solid var(--rule);
+      padding-left: 24px;
+      margin: 32px 0 34px;
+      color: var(--text);
+    }
+
+    .questions p {
+      margin-bottom: 12px;
+    }
+
+    .sequence {
+      border-left: 1px solid var(--rule);
+      padding-left: 24px;
+      margin: 32px 0 34px;
+    }
+
+    .sequence p {
+      margin-bottom: 12px;
+    }
+
+    .emphasis {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(1.38rem, 2.7vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin: 34px 0;
+      max-width: 850px;
+    }
+
+    .closing {
+      border-top: 1px solid var(--rule);
+      margin-top: 44px;
+      padding-top: 34px;
+    }
+
+    .closing p {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.95rem);
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    footer {
+      margin-top: 58px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+      color: var(--dim);
+      font-size: 0.88rem;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--dim);
+    }
+
+    a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 42px 20px 56px;
+      }
+
+      header {
+        margin-bottom: 40px;
+      }
+
+      .questions,
+      .sequence {
+        padding-left: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand-mark">h</div>
+      <div class="brand-name">Harvey Systems</div>
+      <div class="subtitle">Legal Intelligence</div>
+      <a class="back-link" href="/">Return to Harvey Systems</a>
+    </header>
+
+    <main>
+      <article>
+        <div class="paper-label">White Paper</div>
+        <h1>Discovery Is Not an Archive</h1>
+        <div class="dek">Evidentiary Reconstruction Beyond Traditional Discovery</div>
+
+        <div class="meta">Harvey Systems / 2026</div>
+
+        <p class="opening">Formal discovery rarely exists as a complete narrative.</p>
+
+        <p>It arrives late. It depends on what still exists. It depends on what opposing parties possess, preserve, search, produce, and are compelled to disclose. It is shaped by objections, custody, retention practices, dissolved entities, broken chains of ownership, regulatory drift, and the ordinary decay of institutional memory.</p>
+
+        <p>Discovery is not useless. It is not irrelevant. It is not secondary.</p>
+
+        <p class="emphasis">But discovery is not an archive.</p>
+
+        <p>It is part of a curated procedure inside an adversarial system. It can confirm, contradict, supplement, or expose. It cannot, by itself, reconstruct the long arc of institutional conduct. It cannot recover what was never preserved. It cannot rebuild decades of operational practice. It cannot force fragmented institutions to remember themselves whole.</p>
+
+        <p>In complex litigation, especially legacy harm and institutional negligence cases, the central question is rarely confined to the day of injury.</p>
+
+        <p>The necessary questions point earlier.</p>
+
+        <div class="questions">
+          <p>What was known before harm occurred?</p>
+          <p>What conditions repeated?</p>
+          <p>What violations were tolerated?</p>
+          <p>What hazards were renamed, deferred, transferred, minimized, buried, or normalized?</p>
+          <p>What appeared in one agency file but not another?</p>
+          <p>What was publicly asserted in one archive and internally contradicted in a second?</p>
+          <p>What disappeared from the record at the moment its presence would have mattered?</p>
+        </div>
+
+        <p class="emphasis">The injury is the event.<br />The pattern is the proof.</p>
+
+        <p>That proof rarely lives in one place, and never completely in discovery.</p>
+
+        <p>Regulatory archives preserve what regulators recorded. Corporate records preserve what corporations maintained or chose to disclose. Newspapers preserve what became visible enough to report. Public records preserve administrative residue.</p>
+
+        <p>None of these archives is neutral. Each carries the motive, limitation, vocabulary, and blind spot of the institution that created it.</p>
+
+        <p>A single archive is a silo.</p>
+        <p>A discovery production is a curated silo under litigation pressure.</p>
+        <p>An evidentiary archive must be built across all of them.</p>
+
+        <p>This work provides context and structural correction to the produced record. It aligns materials that were never designed to speak to each other: inspection reports against corporate filings, permit histories against complaints, newspaper statements against regulatory notices, ownership changes against recurring violations, technical findings against public assurances.</p>
+
+        <p>Once aligned, siloed fragments begin to show what no single document can prove alone.</p>
+
+        <div class="sequence">
+          <p>Delay becomes visible as strategy.</p>
+          <p>Recurring violations become evidence of normalization.</p>
+          <p>Repeated fines without remediation become economic calculus.</p>
+          <p>Personnel continuity becomes continuity of knowledge.</p>
+          <p>Omission becomes diagnostic.</p>
+          <p>Contradiction becomes probative.</p>
+        </div>
+
+        <p class="emphasis">The pattern is the proof.</p>
+
+        <p>And the pattern is rarely waiting in one file. It is usually scattered across agency archives, old newspapers, discovery fights, and the attic of someone who kept what institutions did not.</p>
+
+        <p>In isolation, these fragments are deniable.</p>
+
+        <p>In sequence, they become evidence.</p>
+
+        <p>That is the central failure of relying on discovery alone. Discovery may produce the document. It may not produce the continuity. It may disclose the exhibit while leaving the archive fractured. It may answer one request while leaving the institutional pattern untouched.</p>
+
+        <p>Harvey Systems exists in that fracture.</p>
+
+        <p>The work is to reconstruct the evidentiary field before, beside, and beyond discovery: to build source-linked archives, operational chronologies, regulatory histories, institutional knowledge timelines, and structured factual analyses capable of showing what fragmented production cannot.</p>
+
+        <p>In legacy harm cases, complex litigation, and multi-defendant matters, incomplete structure often protects the institution that already had the advantage of time. A fully built structure does something different: it reveals the pattern, identifies the gaps, and guides discovery toward requests that could not have been known at the outset.</p>
+
+        <div class="closing">
+          <p>Courts require admissibility.</p>
+          <p>The burden of proof requires more.</p>
+          <p>It may require reconstructing the memory an institution lost, dispersed, buried, or strategically failed to hold together.</p>
+          <p>Discovery produces pieces.</p>
+          <p>The archive reveals the pattern.</p>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      © Harvey Systems | Legal Intelligence | 2026
+    </footer>
+  </div>
+</body>
+</html>
