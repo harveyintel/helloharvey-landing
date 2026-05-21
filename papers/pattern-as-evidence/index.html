@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pattern as Evidence: a Harvey Systems white paper on how institutions reveal knowledge across time." />
+  <title>Pattern as Evidence | Harvey Systems</title>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --text: #e6e6e6;
+      --muted: #9a9a9a;
+      --dim: #6f6f6f;
+      --rule: #343434;
+      --panel: #0c0c0c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Akzidenz-Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0.01em;
+    }
+
+    .page {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      padding: 64px 28px 76px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 42px;
+      margin-bottom: 58px;
+    }
+
+    .brand-mark {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(3.75rem, 9vw, 6.75rem);
+      line-height: 0.8;
+      color: var(--text);
+      margin: 0 0 26px;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-name {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--dim);
+    }
+
+    .back-link:hover {
+      color: var(--text);
+      border-bottom-color: var(--text);
+    }
+
+    main {
+      display: grid;
+      gap: 44px;
+    }
+
+    article {
+      max-width: 860px;
+    }
+
+    .paper-label {
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(2.25rem, 5vw, 4.65rem);
+      line-height: 0.98;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      max-width: 900px;
+    }
+
+    .dek {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      max-width: 780px;
+    }
+
+    .meta {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin: 38px 0 46px;
+      padding: 18px 0;
+      color: var(--dim);
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0 0 20px;
+      max-width: 820px;
+    }
+
+    .opening {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      max-width: 880px;
+      margin-bottom: 30px;
+    }
+
+    .emphasis {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(1.38rem, 2.7vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin: 34px 0;
+      max-width: 850px;
+    }
+
+    .signals {
+      display: grid;
+      gap: 22px;
+      margin: 34px 0;
+    }
+
+    .signal {
+      border-left: 1px solid var(--rule);
+      padding-left: 24px;
+    }
+
+    .signal-title {
+      color: var(--text);
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .sequence {
+      border-left: 1px solid var(--rule);
+      padding-left: 24px;
+      margin: 32px 0 34px;
+    }
+
+    .sequence p {
+      margin-bottom: 12px;
+    }
+
+    .closing {
+      border-top: 1px solid var(--rule);
+      margin-top: 44px;
+      padding-top: 34px;
+    }
+
+    .closing p {
+      font-family: "Arno Pro", Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.95rem);
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    footer {
+      margin-top: 58px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+      color: var(--dim);
+      font-size: 0.88rem;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--dim);
+    }
+
+    a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 42px 20px 56px;
+      }
+
+      header {
+        margin-bottom: 40px;
+      }
+
+      .signal,
+      .sequence {
+        padding-left: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand-mark">h</div>
+      <div class="brand-name">Harvey Systems</div>
+      <div class="subtitle">Legal Intelligence</div>
+      <a class="back-link" href="/">Return to Harvey Systems</a>
+    </header>
+
+    <main>
+      <article>
+        <div class="paper-label">Adapted from “Proving the Pattern: Forensic History in Institutional Negligence”</div>
+        <h1>Pattern as Evidence</h1>
+        <div class="dek">How Institutions Reveal Knowledge Across Time</div>
+
+        <div class="meta">Harvey Systems / 2026</div>
+
+        <p class="opening">Institutional negligence does not announce itself.</p>
+
+        <p>It rarely appears in one memo, one confession, one inspection, one admission, or one catastrophic failure.</p>
+
+        <p class="emphasis">It is revealed by repetition.</p>
+
+        <p>A violation appears once. Then again. Then again under a new permit number, a new operator, a new subsidiary, a new facility name, or a new regulatory cycle. A hazard is documented, deferred, renamed, reclassified, minimized, or allowed to remain. A fine is paid. A deadline moves. A corrective action plan is promised. The underlying condition does not change.</p>
+
+        <p>In isolation, each event can be explained.</p>
+
+        <p>In sequence, explanation becomes harder.</p>
+
+        <p>That is where pattern becomes evidence.</p>
+
+        <p>Pattern is what emerges when contemporaneous records are aligned across time and institutional silos. It is the recurrence of conduct, omission, delay, contradiction, and tolerance with enough consistency that the record begins to show institutional knowledge.</p>
+
+        <p class="emphasis">The question is not only what happened.<br />The question is what kept happening.</p>
+
+        <p>In institutional negligence cases, six signals recur with particular force.</p>
+
+        <div class="signals">
+          <div class="signal">
+            <div class="signal-title">Personnel Continuity</div>
+            <p>Corporate names change. Facilities are renamed. Subsidiaries dissolve. But people remain. The same decision-makers, managers, consultants, engineers, or signatories may appear across inspection reports, correspondence, corrective action plans, permit files, and internal records. Their presence rebuts corporate amnesia. Continuity of personnel becomes continuity of knowledge.</p>
+          </div>
+
+          <div class="signal">
+            <div class="signal-title">Delay</div>
+            <p>Delay shows how inaction becomes strategy. Warnings are issued. Extensions are granted. Follow-up inspections are scheduled. Reports are requested. Meanwhile, the hazard remains. One delay may be ordinary. Repeated delay becomes operational behavior.</p>
+          </div>
+
+          <div class="signal">
+            <div class="signal-title">Recurrence</div>
+            <p>Recurrence shows normalization. The same violation documented across months, years, or decades is not an isolated failure. It is a tolerated condition. Recurrence shows the hazard or condition was known and foreseeable.</p>
+          </div>
+
+          <div class="signal">
+            <div class="signal-title">Fines Without Meaningful Remediation</div>
+            <p>Fines without meaningful remediation show economic calculus. When penalties recur and conditions remain unchanged, fines stop functioning as deterrents. When remediation costs more than noncompliance, harm can become budgeted.</p>
+          </div>
+
+          <div class="signal">
+            <div class="signal-title">Omission</div>
+            <p>Omission shows institutional stress. Missing signatures, broken inspection chains, unexplained gaps, and sudden changes in terminology often cluster where documentation would have created consequence. In long-arc cases, negative space can become diagnostic.</p>
+          </div>
+
+          <div class="signal">
+            <div class="signal-title">Contradiction</div>
+            <p>Contradiction shows dissonance between public posture and internal record. Public statements claim compliance while regulatory files show unresolved hazards. Corporate filings claim stability while bankruptcy records show collapse. Inspection reports say one thing while complaints, emergency calls, or technical findings say another. Contradiction is often where the most probative evidence lives.</p>
+          </div>
+        </div>
+
+        <p>Institutions and corporations interact with public systems, and public systems leave patterns. They leave patterns in permits, fines, signatures, delays, public statements, agency files, ownership transfers, and the language used to describe the same hazard over time.</p>
+
+        <p>The institution often argues fragmentation.</p>
+
+        <div class="sequence">
+          <p>New owner.</p>
+          <p>New entity.</p>
+          <p>New permit.</p>
+          <p>New name.</p>
+          <p>New cycle.</p>
+          <p>New file.</p>
+          <p>No memory.</p>
+        </div>
+
+        <p>But the archive often contains the continuity the institution cannot avoid.</p>
+
+        <div class="sequence">
+          <p>Same people.</p>
+          <p>Same hazard.</p>
+          <p>Same delay.</p>
+          <p>Same violation.</p>
+          <p>Same tolerance.</p>
+          <p>Same knowledge.</p>
+        </div>
+
+        <div class="closing">
+          <p>Pattern collapses the defense of isolated failure.</p>
+          <p>It proves what institutions most often deny: that the harm was not new, not unknowable, and not disconnected from the record that came before it.</p>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      © Harvey Systems | Legal Intelligence | 2026
+    </footer>
+  </div>
+</body>
+</html>
